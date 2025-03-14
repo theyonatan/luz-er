@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
-import "./App.css";
+import React, { useState, useEffect, useRef } from 'react';
+import './App.css';
 
-// ----- Empty Calendar Data -----
-// The calendar now starts empty by default.
+// ----- Empty Calendar Data (starts empty) -----
 const initialWeekData = {
   week_start: "2025-03-09",
   days: [
@@ -10,35 +9,34 @@ const initialWeekData = {
     { day: "שני", events: [] },
     { day: "שלישי", events: [] },
     { day: "רביעי", events: [] },
-    { day: "חמישי", events: [] },
-  ],
+    { day: "חמישי", events: [] }
+  ]
 };
 
 // ----- Default Event Types (all pastel) -----
-// Colors are now defined solely by type.
 const initialEventTypes = {
-  Python: "#B3FFB3", // Pastel Green
-  CPP: "#FF8A8A", // Pastel Dark Red
-  C: "#FFB3B3", // Pastel Red
-  Web: "#B3D9FF", // Pastel Blue
-  מטודולוגיות: "#FFB3E6", // Pastel Pink
-  רשתות: "#B3E5FF", // Pastel Light Blue
-  פעילויות: "#FFB3FF", // Pastel Magenta
-  "הפסקת אוכל": "#E0E0E0", // Pastel Light Gray
-  אחר: "#CCCCCC", // Pastel Gray
-  DB: "#FFFFB3", // Pastel Yellow
-  DE: "#FFD9B3", // Pastel Orange
+  "Python": "#B3FFB3",      // Pastel Green
+  "CPP": "#FF8A8A",         // Pastel Dark Red
+  "C": "#FFB3B3",           // Pastel Red
+  "Web": "#B3D9FF",         // Pastel Blue
+  "מטודולוגיות": "#FFB3E6", // Pastel Pink
+  "רשתות": "#B3E5FF",       // Pastel Light Blue
+  "פעילויות": "#FFB3FF",     // Pastel Magenta
+  "הפסקת אוכל": "#E0E0E0",    // Pastel Light Gray
+  "אחר": "#CCCCCC",         // Pastel Gray
+  "DB": "#FFFFB3",          // Pastel Yellow
+  "DE": "#FFD9B3"           // Pastel Orange
 };
 
 // ----- Utility Functions -----
 function timeToMinutes(t) {
-  const [h, m] = t.split(":").map(Number);
+  const [h, m] = t.split(':').map(Number);
   return h * 60 + m;
 }
 function minutesToTime(mins) {
   const h = Math.floor(mins / 60);
   const m = mins % 60;
-  return `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}`;
+  return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}`;
 }
 function snapToQuarterHour(mins) {
   const quarter = 15;
@@ -71,6 +69,19 @@ function App() {
   // Current time line offset (in px)
   const [currentTimeOffset, setCurrentTimeOffset] = useState(null);
 
+  // On mount, try to load calendarData.json from the public folder.
+  useEffect(() => {
+    fetch('/calendarData.json')
+      .then(res => {
+        if (res.ok) return res.json();
+        else throw new Error('No file');
+      })
+      .then(data => setWeekData(data))
+      .catch(err => {
+        console.log('No external calendarData.json found, using default.');
+      });
+  }, []);
+
   useEffect(() => {
     const updateCurrentTimeLine = () => {
       const now = new Date();
@@ -91,7 +102,7 @@ function App() {
     return () => clearInterval(timer);
   }, []);
 
-  // Toggle admin mode: require password only when entering.
+  // Toggle admin mode by clicking the word "פסי" in the header.
   const toggleAdminMode = () => {
     if (!adminMode) {
       const pass = prompt("הכנס סיסמת ניהול:");
@@ -123,19 +134,17 @@ function App() {
       alert("אנא בחר סוג אירוע");
       return;
     }
-    if (
-      timeToMinutes(tempEventData.end) <= timeToMinutes(tempEventData.start)
-    ) {
+    if (timeToMinutes(tempEventData.end) <= timeToMinutes(tempEventData.start)) {
       alert("שעת הסיום חייבת להיות אחרי שעת ההתחלה");
       return;
     }
     // Use the event type’s color (default white if missing)
     const typeColor = eventTypes[tempEventData.type] || "#ffffff";
     const updatedEvent = { ...tempEventData, color: typeColor };
-    const newDays = weekData.days.map((dayObj) => {
+    const newDays = weekData.days.map(dayObj => {
       if (dayObj.day !== selectedEventDay) return dayObj;
-      const updatedEvents = dayObj.events.map((ev) =>
-        ev.id === updatedEvent.id ? updatedEvent : ev,
+      const updatedEvents = dayObj.events.map(ev =>
+        ev.id === updatedEvent.id ? updatedEvent : ev
       );
       return { ...dayObj, events: updatedEvents };
     });
@@ -151,12 +160,9 @@ function App() {
 
   const removeEvent = () => {
     if (!window.confirm("האם למחוק אירוע זה?")) return;
-    const newDays = weekData.days.map((dayObj) => {
+    const newDays = weekData.days.map(dayObj => {
       if (dayObj.day !== selectedEventDay) return dayObj;
-      return {
-        ...dayObj,
-        events: dayObj.events.filter((ev) => ev.id !== tempEventData.id),
-      };
+      return { ...dayObj, events: dayObj.events.filter(ev => ev.id !== tempEventData.id) };
     });
     setWeekData({ ...weekData, days: newDays });
     closeLeftPanel();
@@ -171,20 +177,8 @@ function App() {
     const endTime = minutesToTime(startMins + 15);
     const newId = generateId();
     setSelectedEventDay(dayName);
-    setSelectedEvent({
-      id: newId,
-      title: "",
-      start: startTime,
-      end: endTime,
-      type: "",
-    });
-    setTempEventData({
-      id: newId,
-      title: "",
-      start: startTime,
-      end: endTime,
-      type: "",
-    });
+    setSelectedEvent({ id: newId, title: "", start: startTime, end: endTime, type: "" });
+    setTempEventData({ id: newId, title: "", start: startTime, end: endTime, type: "" });
   };
 
   const saveNewEvent = () => {
@@ -198,7 +192,7 @@ function App() {
     }
     const typeColor = eventTypes[tempEventData.type] || "#ffffff";
     const newEvent = { ...tempEventData, color: typeColor };
-    const newDays = weekData.days.map((dayObj) => {
+    const newDays = weekData.days.map(dayObj => {
       if (dayObj.day !== selectedEventDay) return dayObj;
       return { ...dayObj, events: [...dayObj.events, newEvent] };
     });
@@ -259,11 +253,11 @@ function App() {
   // ----- JSON Import/Export -----
   const handleDownloadJson = () => {
     const dataStr = JSON.stringify(weekData, null, 2);
-    const blob = new Blob([dataStr], { type: "application/json" });
+    const blob = new Blob([dataStr], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
+    const link = document.createElement('a');
     link.href = url;
-    link.download = "calendarData.json";
+    link.download = 'calendarData.json';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -295,14 +289,14 @@ function App() {
   // ----- Drag-to-Resize (admin mode only) for a selected event -----
   const handleEventDragChange = (eventId, newStart, newEnd, isTop) => {
     if (selectedEvent && selectedEvent.id === eventId) {
-      const newDays = weekData.days.map((day) => {
+      const newDays = weekData.days.map(day => {
         if (day.day === selectedEventDay) {
-          const newEvents = day.events.map((ev) => {
+          const newEvents = day.events.map(ev => {
             if (ev.id === eventId) {
               return {
                 ...ev,
                 start: isTop ? newStart : ev.start,
-                end: !isTop ? newEnd : ev.end,
+                end: !isTop ? newEnd : ev.end
               };
             }
             return ev;
@@ -312,7 +306,7 @@ function App() {
         return day;
       });
       setWeekData({ ...weekData, days: newDays });
-      setTempEventData((prev) => ({
+      setTempEventData(prev => ({
         ...prev,
         start: isTop ? newStart : prev.start,
         end: !isTop ? newEnd : prev.end,
@@ -331,21 +325,17 @@ function App() {
             <input
               type="text"
               value={tempEventData?.title || ""}
-              onChange={(e) =>
-                setTempEventData({ ...tempEventData, title: e.target.value })
-              }
+              onChange={e => setTempEventData({ ...tempEventData, title: e.target.value })}
             />
           </div>
           <div className="form-group">
             <label>סוג אירוע:</label>
             <select
               value={tempEventData?.type || ""}
-              onChange={(e) =>
-                setTempEventData({ ...tempEventData, type: e.target.value })
-              }
+              onChange={e => setTempEventData({ ...tempEventData, type: e.target.value })}
             >
               <option value="">בחר סוג אירוע</option>
-              {Object.keys(eventTypes).map((typeKey) => (
+              {Object.keys(eventTypes).map(typeKey => (
                 <option key={typeKey} value={typeKey}>
                   {typeKey}
                 </option>
@@ -357,9 +347,7 @@ function App() {
             <input
               type="time"
               value={tempEventData?.start || "07:30"}
-              onChange={(e) =>
-                setTempEventData({ ...tempEventData, start: e.target.value })
-              }
+              onChange={e => setTempEventData({ ...tempEventData, start: e.target.value })}
             />
           </div>
           <div className="form-group">
@@ -367,14 +355,10 @@ function App() {
             <input
               type="time"
               value={tempEventData?.end || "07:45"}
-              onChange={(e) =>
-                setTempEventData({ ...tempEventData, end: e.target.value })
-              }
+              onChange={e => setTempEventData({ ...tempEventData, end: e.target.value })}
             />
           </div>
-          {weekData.days
-            .find((d) => d.day === selectedEventDay)
-            ?.events.some((ev) => ev.id === selectedEvent.id) ? (
+          {weekData.days.find(d => d.day === selectedEventDay)?.events.some(ev => ev.id === selectedEvent.id) ? (
             <div className="btn-group">
               <button onClick={saveEventChanges}>שמור</button>
               <button onClick={removeEvent}>מחק</button>
@@ -391,33 +375,26 @@ function App() {
 
       {/* ----- Main Calendar Area ----- */}
       <div className="calendar-wrapper">
-        <h1 className="main-title">לו"ז קורס פסי</h1>
-        <div className="top-bar">
-          <button className="admin-toggle" onClick={toggleAdminMode}>
-            {adminMode ? "יציאה ממצב ניהול" : "מצב ניהול"}
-          </button>
-        </div>
-
-        {/* Scrollable container that holds both day columns and time labels.
-            Its direction is set to LTR so that the time labels appear on the right. */}
+        <h1 className="main-title">
+          לו"ז קורס <span className="admin-trigger" onClick={toggleAdminMode}>פסי</span>
+        </h1>
+        {/* Scrollable container that holds day columns and time labels.
+            Set to LTR so that time labels appear on the right and scroll together. */}
         <div className="scrollable-calendar">
           <div className="day-columns">
-            {weekData.days
-              .slice()
-              .reverse()
-              .map((dayObj) => (
-                <DayColumn
-                  key={dayObj.day}
-                  dayObj={dayObj}
-                  adminMode={adminMode}
-                  selectedEventId={selectedEvent ? selectedEvent.id : null}
-                  currentTimeOffset={currentTimeOffset}
-                  onEventClick={handleEventClick}
-                  onDayDoubleClick={handleDoubleClickDay}
-                  onDragChange={handleEventDragChange}
-                  eventTypes={eventTypes}
-                />
-              ))}
+            {weekData.days.slice().reverse().map(dayObj => (
+              <DayColumn
+                key={dayObj.day}
+                dayObj={dayObj}
+                adminMode={adminMode}
+                selectedEventId={selectedEvent ? selectedEvent.id : null}
+                currentTimeOffset={currentTimeOffset}
+                onEventClick={handleEventClick}
+                onDayDoubleClick={handleDoubleClickDay}
+                onDragChange={handleEventDragChange}
+                eventTypes={eventTypes}
+              />
+            ))}
           </div>
           <TimeLabels />
         </div>
@@ -435,7 +412,7 @@ function App() {
               type="file"
               accept=".json"
               ref={fileInputRef}
-              style={{ display: "none" }}
+              style={{ display: 'none' }}
               onChange={onJsonFileSelected}
             />
           </div>
@@ -444,16 +421,9 @@ function App() {
             {Object.entries(eventTypes).map(([typeKey, color]) => (
               <div key={typeKey} className="type-row">
                 <span className="type-name">{typeKey}</span>
-                <span
-                  className="type-color-block"
-                  style={{ backgroundColor: color }}
-                ></span>
-                <button onClick={() => handleEditEventType(typeKey)}>
-                  ערוך
-                </button>
-                <button onClick={() => handleRemoveEventType(typeKey)}>
-                  מחק
-                </button>
+                <span className="type-color-block" style={{ backgroundColor: color }}></span>
+                <button onClick={() => handleEditEventType(typeKey)}>ערוך</button>
+                <button onClick={() => handleRemoveEventType(typeKey)}>מחק</button>
               </div>
             ))}
             {editingType ? (
@@ -462,13 +432,13 @@ function App() {
                 <input
                   type="text"
                   value={editingTypeNewName}
-                  onChange={(e) => setEditingTypeNewName(e.target.value)}
+                  onChange={e => setEditingTypeNewName(e.target.value)}
                 />
                 <label>צבע:</label>
                 <input
                   type="color"
                   value={editingTypeNewColor}
-                  onChange={(e) => setEditingTypeNewColor(e.target.value)}
+                  onChange={e => setEditingTypeNewColor(e.target.value)}
                 />
                 <div className="btn-group">
                   <button onClick={saveTypeEdits}>שמור</button>
@@ -482,13 +452,13 @@ function App() {
                   type="text"
                   placeholder="סוג אירוע חדש"
                   value={editingTypeNewName}
-                  onChange={(e) => setEditingTypeNewName(e.target.value)}
+                  onChange={e => setEditingTypeNewName(e.target.value)}
                 />
                 <label>צבע:</label>
                 <input
                   type="color"
                   value={editingTypeNewColor}
-                  onChange={(e) => setEditingTypeNewColor(e.target.value)}
+                  onChange={e => setEditingTypeNewColor(e.target.value)}
                 />
                 <button onClick={handleAddEventType}>הוסף</button>
               </div>
@@ -500,16 +470,7 @@ function App() {
   );
 }
 
-function DayColumn({
-  dayObj,
-  adminMode,
-  selectedEventId,
-  currentTimeOffset,
-  onEventClick,
-  onDayDoubleClick,
-  onDragChange,
-  eventTypes,
-}) {
+function DayColumn({ dayObj, adminMode, selectedEventId, currentTimeOffset, onEventClick, onDayDoubleClick, onDragChange, eventTypes }) {
   const slotHeight = 20;
   const totalSlots = (22.5 * 60 - 7.5 * 60) / 15;
   const handleDoubleClick = (e) => {
@@ -523,13 +484,10 @@ function DayColumn({
     <div className="day-column" onDoubleClick={handleDoubleClick}>
       <div className="day-header">{dayObj.day}</div>
       {currentTimeOffset !== null && (
-        <div
-          className="current-time-line"
-          style={{ top: currentTimeOffset }}
-        ></div>
+        <div className="current-time-line" style={{ top: currentTimeOffset }}></div>
       )}
       <div className="day-body" style={{ height: totalSlots * slotHeight }}>
-        {dayObj.events.map((eventObj) => {
+        {dayObj.events.map(eventObj => {
           const top = getPositionFromTime(eventObj.start, slotHeight);
           const height = getPositionFromTime(eventObj.end, slotHeight) - top;
           return (
@@ -552,17 +510,7 @@ function DayColumn({
   );
 }
 
-function EventBlock({
-  dayName,
-  eventObj,
-  top,
-  height,
-  adminMode,
-  isSelected,
-  onEventClick,
-  onDragChange,
-  eventTypes,
-}) {
+function EventBlock({ dayName, eventObj, top, height, adminMode, isSelected, onEventClick, onDragChange, eventTypes }) {
   const slotHeight = 20;
   // Use the color from eventTypes (default white)
   const bgColor = eventTypes[eventObj.type] || "#ffffff";
@@ -582,11 +530,11 @@ function EventBlock({
       onDragChange(eventObj.id, newStartTime, eventObj.end, true);
     };
     const onMouseUp = () => {
-      document.removeEventListener("mousemove", onMouseMove);
-      document.removeEventListener("mouseup", onMouseUp);
+      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseup', onMouseUp);
     };
-    document.addEventListener("mousemove", onMouseMove);
-    document.addEventListener("mouseup", onMouseUp);
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
   };
 
   // Drag handle for bottom edge
@@ -604,11 +552,11 @@ function EventBlock({
       onDragChange(eventObj.id, eventObj.start, newEndTime, false);
     };
     const onMouseUp = () => {
-      document.removeEventListener("mousemove", onMouseMove);
-      document.removeEventListener("mouseup", onMouseUp);
+      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseup', onMouseUp);
     };
-    document.addEventListener("mousemove", onMouseMove);
-    document.addEventListener("mouseup", onMouseUp);
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
   };
 
   return (
@@ -617,7 +565,7 @@ function EventBlock({
       style={{
         top: top,
         height: height,
-        backgroundColor: bgColor,
+        backgroundColor: bgColor
       }}
       onClick={() => onEventClick(dayName, eventObj)}
     >
@@ -625,14 +573,8 @@ function EventBlock({
       <span className="event-title">{eventObj.title}</span>
       {adminMode && isSelected && (
         <>
-          <div
-            className="drag-handle top-handle"
-            onMouseDown={handleTopDragStart}
-          ></div>
-          <div
-            className="drag-handle bottom-handle"
-            onMouseDown={handleBottomDragStart}
-          ></div>
+          <div className="drag-handle top-handle" onMouseDown={handleTopDragStart}></div>
+          <div className="drag-handle bottom-handle" onMouseDown={handleBottomDragStart}></div>
         </>
       )}
     </div>
@@ -650,11 +592,9 @@ function TimeLabels() {
         const mins = startDayTime + i * 15;
         const h = Math.floor(mins / 60);
         const m = mins % 60;
-        const timeStr = `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}`;
+        const timeStr = `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}`;
         return (
-          <div key={i} className="time-label">
-            {timeStr}
-          </div>
+          <div key={i} className="time-label">{timeStr}</div>
         );
       })}
     </div>

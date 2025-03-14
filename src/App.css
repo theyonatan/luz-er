@@ -77,24 +77,19 @@ html, body {
   font-weight: 500;
   margin: 0 0 15px 0;
 }
+/* Admin trigger: "פסי" now inherits surrounding style */
+.admin-trigger {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
 .top-bar {
   text-align: center;
   margin-bottom: 10px;
 }
-.admin-toggle {
-  background-color: #ffeb3b;
-  border: 1px solid #fdd835;
-  border-radius: 4px;
-  padding: 4px 8px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-.admin-toggle:hover {
-  background-color: #ffeb3b90;
-}
 
 /* ----- Scrollable Calendar (Day Columns + Time Labels) ----- */
-/* Set container to LTR so that the second child (time labels) appears on the right */
+/* Set container to LTR so that the second child (time labels) appears on the right and scrolls together. */
 .scrollable-calendar {
   display: flex;
   flex-direction: row;
@@ -105,7 +100,7 @@ html, body {
   flex: 1;
   direction: ltr;
 }
-/* Day columns set back to RTL inside */
+/* Day columns: set back to RTL inside */
 .day-columns {
   display: flex;
   flex-direction: row-reverse;

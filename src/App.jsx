@@ -71,7 +71,7 @@ function App() {
 
   // On mount, try to load calendarData.json from the public folder.
   useEffect(() => {
-    fetch('/src/calendarData.json')
+    fetch('/calendarData.json')
       .then(res => {
         if (res.ok) return res.json();
         else throw new Error('No file');

@@ -25,7 +25,10 @@ const initialEventTypes = {
   "הפסקת אוכל": "#E0E0E0",    // Pastel Light Gray
   "אחר": "#CCCCCC",         // Pastel Gray
   "DB": "#FFFFB3",          // Pastel Yellow
-  "DE": "#FFD9B3"           // Pastel Orange
+  "Zoom": "#B3D9FF",          // Pastel Blue
+  "זמן לוז": "#B3FFB3",         // Pastel Green
+  "מורקים": "#FFFFB3",          // Pastel Yellow
+  "זמן עבודה עצמית": "#FFFFB3"           // Pastel Yellow
 };
 
 // ----- Utility Functions -----

@@ -27,7 +27,7 @@ const initialEventTypes = {
   "DB": "#FFFFB3",          // Pastel Yellow
   "Zoom": "#B3D9FF",          // Pastel Blue
   "זמן לוז": "#B3FFB3",         // Pastel Green
-  "מורקים": "#FFFFB3",          // Pastel Yellow
+  "מורקים": "#F87A45",          // Pastel Yellow
   "זמן עבודה עצמית": "#FFFFB3"           // Pastel Yellow
 };
 

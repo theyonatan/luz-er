@@ -113,7 +113,7 @@
         {
           "id": "1110mh2yt",
           "title": "זום פתיחת יום והסבר על הלו\"ז",
-          "start": "10:15",
+          "start": "10:00",
           "end": "11:00",
           "type": "Zoom",
           "color": "#B3D9FF"
@@ -122,39 +122,39 @@
           "id": "8a5jfs3hw",
           "title": "פאנל מפתחים",
           "start": "11:10",
-          "end": "13:15",
+          "end": "12:50",
           "type": "זמן לוז",
           "color": "#B3FFB3"
         },
         {
           "id": "piaish30e",
           "title": "הפסקת צהריים",
-          "start": "13:25",
-          "end": "14:25",
+          "start": "13:00",
+          "end": "13:50",
           "type": "הפסקת אוכל",
           "color": "#E0E0E0"
         },
         {
           "id": "bfz3a2mvt",
           "title": "הצגת מדורי היחידות",
-          "start": "14:35",
-          "end": "15:30",
+          "start": "14:00",
+          "end": "14:50",
           "type": "Zoom",
           "color": "#B3D9FF"
         },
         {
           "id": "4jvnsfkul",
           "title": "שיחות שיבוצים",
-          "start": "15:40",
-          "end": "16:35",
+          "start": "15:00",
+          "end": "16:20",
           "type": "זמן לוז",
           "color": "#B3FFB3"
         },
         {
           "id": "q0ajj5gnb",
           "title": "זום מדורי",
-          "start": "16:45",
-          "end": "18:10",
+          "start": "16:30",
+          "end": "17:30",
           "type": "Zoom",
           "color": "#B3D9FF"
         }

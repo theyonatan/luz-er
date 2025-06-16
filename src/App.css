@@ -216,7 +216,8 @@ html, body {
   border-left: 1px solid #ccc;
   text-align: center;
   font-size: 0.7rem;
-  padding-top: 5px;
+  /* Offset labels to align with the start of the day body */
+  padding-top: 30px;
   flex-shrink: 0;
 }
 .time-label {

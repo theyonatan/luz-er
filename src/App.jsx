@@ -15,17 +15,12 @@ const initialWeekData = {
 
 // ----- Default Event Types (all pastel) -----
 const initialEventTypes = {
-  "Python": "#B3FFB3",      // Pastel Green
-  "CPP": "#FF8A8A",         // Pastel Dark Red
-  "C": "#FFB3B3",           // Pastel Red
-  "Web": "#B3D9FF",         // Pastel Blue
-  "מטודולוגיות": "#FFB3E6", // Pastel Pink
-  "רשתות": "#B3E5FF",       // Pastel Light Blue
   "פעילויות": "#FFB3FF",     // Pastel Magenta
-  "הפסקת אוכל": "#E0E0E0",    // Pastel Light Gray
-  "אחר": "#CCCCCC",         // Pastel Gray
-  "DB": "#FFFFB3",          // Pastel Yellow
-  "DE": "#FFD9B3"           // Pastel Orange
+  "הפסקת אוכל": "#E0E0E0",
+  "Zoom": "#B3D9FF",          // Pastel Blue
+  "זמן לוז": "#B3FFB3",         // Pastel Green
+  "מורקים": "#F87A45",          // Pastel Brown
+  "זמן עבודה עצמית": "#FFFFB3"           // Pastel Yellow
 };
 
 // ----- Utility Functions -----
@@ -571,7 +566,6 @@ function EventBlock({ dayName, eventObj, top, height, adminMode, isSelected, onE
     >
       <div className="event-type-badge">{eventObj.type}</div>
       <span className="event-title">{eventObj.title}</span>
-      <div className="time-range">{eventObj.start} - {eventObj.end}</div>
       {adminMode && isSelected && (
         <>
           <div className="drag-handle top-handle" onMouseDown={handleTopDragStart}></div>

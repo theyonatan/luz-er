@@ -7,48 +7,48 @@
         {
           "id": "xdfbhqixz",
           "title": "זום פתיחת שבוע 16",
-          "start": "09:45",
-          "end": "10:30",
+          "start": "10:15",
+          "end": "11:00",
           "type": "Zoom",
           "color": "#B3D9FF"
         },
         {
           "id": "8un7cxetf",
           "title": "עבודה על המצגות",
-          "start": "10:40",
-          "end": "12:05",
+          "start": "11:10",
+          "end": "12:35",
           "type": "זמן עבודה עצמית",
           "color": "#FFFFB3"
         },
         {
           "id": "5ldlo572i",
           "title": "זום הצגת המצגות לרשצ",
-          "start": "13:40",
-          "end": "14:10",
+          "start": "14:10",
+          "end": "14:40",
           "type": "Zoom",
           "color": "#B3D9FF"
         },
         {
           "id": "4t18dbclq",
           "title": "זום מציגים את כל המצגות",
-          "start": "15:10",
-          "end": "17:40",
+          "start": "15:40",
+          "end": "18:10",
           "type": "Zoom",
           "color": "#B3D9FF"
         },
         {
           "id": "h4w5zylem",
           "title": "הפסקת צהריים",
-          "start": "12:15",
-          "end": "13:30",
+          "start": "12:45",
+          "end": "14:00",
           "type": "הפסקת אוכל",
           "color": "#E0E0E0"
         },
         {
           "id": "2ik3tcxc6",
           "title": "עבודה על המצגות",
-          "start": "14:20",
-          "end": "15:00",
+          "start": "14:50",
+          "end": "15:30",
           "type": "זמן עבודה עצמית",
           "color": "#FFFFB3"
         }
@@ -60,48 +60,48 @@
         {
           "id": "1wef0yzbw",
           "title": "זום פתיחת יום והסבר על הלו\"ז",
-          "start": "10:20",
-          "end": "10:50",
+          "start": "10:50",
+          "end": "11:20",
           "type": "Zoom",
           "color": "#B3D9FF"
         },
         {
           "id": "exztciyjl",
           "title": "מורק של נויה וטליה בוארון",
-          "start": "11:00",
-          "end": "11:30",
+          "start": "11:30",
+          "end": "12:00",
           "type": "מורקים",
           "color": "#F87A45"
         },
         {
           "id": "izzpj67df",
           "title": "פעילות חינוך של צוות חינוך",
-          "start": "11:40",
-          "end": "12:45",
+          "start": "12:10",
+          "end": "13:15",
           "type": "פעילויות",
           "color": "#FFB3FF"
         },
         {
           "id": "uzm5v4f09",
           "title": "מורק של עדן",
-          "start": "13:40",
-          "end": "14:10",
+          "start": "14:10",
+          "end": "14:40",
           "type": "מורקים",
           "color": "#F87A45"
         },
         {
           "id": "12hjsusq1",
           "title": "שיחה עם שירן מפמ\"ר פריזמה",
-          "start": "09:30",
-          "end": "10:10",
+          "start": "10:00",
+          "end": "10:40",
           "type": "זמן לוז",
           "color": "#B3FFB3"
         },
         {
           "id": "e61q1hzz5",
           "title": "הפסקה",
-          "start": "12:55",
-          "end": "13:30",
+          "start": "13:25",
+          "end": "14:00",
           "type": "הפסקת אוכל",
           "color": "#E0E0E0"
         }
@@ -113,48 +113,48 @@
         {
           "id": "1110mh2yt",
           "title": "זום פתיחת יום והסבר על הלו\"ז",
-          "start": "09:45",
-          "end": "10:30",
+          "start": "10:15",
+          "end": "11:00",
           "type": "Zoom",
           "color": "#B3D9FF"
         },
         {
           "id": "8a5jfs3hw",
           "title": "פאנל מפתחים",
-          "start": "10:40",
-          "end": "12:45",
+          "start": "11:10",
+          "end": "13:15",
           "type": "זמן לוז",
           "color": "#B3FFB3"
         },
         {
           "id": "piaish30e",
           "title": "הפסקת צהריים",
-          "start": "12:55",
-          "end": "13:55",
+          "start": "13:25",
+          "end": "14:25",
           "type": "הפסקת אוכל",
           "color": "#E0E0E0"
         },
         {
           "id": "bfz3a2mvt",
           "title": "הצגת מדורי היחידות",
-          "start": "14:05",
-          "end": "15:00",
+          "start": "14:35",
+          "end": "15:30",
           "type": "Zoom",
           "color": "#B3D9FF"
         },
         {
           "id": "4jvnsfkul",
           "title": "שיחות שיבוצים",
-          "start": "15:10",
-          "end": "16:05",
+          "start": "15:40",
+          "end": "16:35",
           "type": "זמן לוז",
           "color": "#B3FFB3"
         },
         {
           "id": "q0ajj5gnb",
           "title": "זום מדורי",
-          "start": "16:15",
-          "end": "17:40",
+          "start": "16:45",
+          "end": "18:10",
           "type": "Zoom",
           "color": "#B3D9FF"
         }

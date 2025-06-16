@@ -5,68 +5,52 @@
       "day": "ראשון",
       "events": [
         {
-          "id": "j7giecr14",
-          "title": "סנדת מספרים בינארים",
+          "id": "xdfbhqixz",
+          "title": "זום פתיחת שבוע 16",
           "start": "09:45",
-          "end": "10:50",
-          "type": "C",
-          "color": "#FFB3B3"
+          "end": "10:30",
+          "type": "Zoom",
+          "color": "#B3D9FF"
         },
         {
-          "id": "ivtg2wvo2",
-          "title": "מבוא ללואו לבל",
-          "start": "11:00",
-          "end": "11:45",
-          "type": "פעילויות",
-          "color": "#FFB3FF"
+          "id": "8un7cxetf",
+          "title": "עבודה על המצגות",
+          "start": "10:40",
+          "end": "12:05",
+          "type": "זמן עבודה עצמית",
+          "color": "#FFFFB3"
         },
         {
-          "id": "d63fgv35e",
-          "title": "הרצאה Intro To C",
-          "start": "11:55",
-          "end": "12:20",
-          "type": "פעילויות",
-          "color": "#FFB3FF"
+          "id": "5ldlo572i",
+          "title": "זום הצגת המצגות לרשצ",
+          "start": "13:40",
+          "end": "14:10",
+          "type": "Zoom",
+          "color": "#B3D9FF"
         },
         {
-          "id": "pkqvnkp2r",
-          "title": "ארוחת צהריים",
-          "start": "12:30",
+          "id": "4t18dbclq",
+          "title": "זום מציגים את כל המצגות",
+          "start": "15:10",
+          "end": "17:40",
+          "type": "Zoom",
+          "color": "#B3D9FF"
+        },
+        {
+          "id": "h4w5zylem",
+          "title": "הפסקת צהריים",
+          "start": "12:15",
           "end": "13:30",
           "type": "הפסקת אוכל",
           "color": "#E0E0E0"
         },
         {
-          "id": "plvkivifs",
-          "title": "תרגול C בסיסי",
-          "start": "13:40",
-          "end": "18:30",
-          "type": "C",
-          "color": "#FFB3B3"
-        },
-        {
-          "id": "voj694tr2",
-          "title": "הרצאה של לטם",
-          "start": "19:40",
-          "end": "20:40",
-          "type": "פעילויות",
-          "color": "#FFB3FF"
-        },
-        {
-          "id": "82cx0084m",
-          "title": "ארוחת ערב",
-          "start": "18:40",
-          "end": "19:30",
-          "type": "הפסקת אוכל",
-          "color": "#E0E0E0"
-        },
-        {
-          "id": "vg5lsimbb",
-          "title": "תרגול C בסיסי",
-          "start": "20:50",
-          "end": "22:00",
-          "type": "C",
-          "color": "#FFB3B3"
+          "id": "2ik3tcxc6",
+          "title": "עבודה על המצגות",
+          "start": "14:20",
+          "end": "15:00",
+          "type": "זמן עבודה עצמית",
+          "color": "#FFFFB3"
         }
       ]
     },
@@ -74,44 +58,52 @@
       "day": "שני",
       "events": [
         {
-          "id": "j86tytl5h",
-          "title": "תרגול C השלמות",
-          "start": "08:20",
-          "end": "12:20",
-          "type": "C",
-          "color": "#FFB3B3"
+          "id": "1wef0yzbw",
+          "title": "זום פתיחת יום והסבר על הלו\"ז",
+          "start": "10:20",
+          "end": "10:50",
+          "type": "Zoom",
+          "color": "#B3D9FF"
         },
         {
-          "id": "7uihbxo6m",
-          "title": "ארוחת צהריים",
-          "start": "12:30",
+          "id": "exztciyjl",
+          "title": "מורק של נויה וטליה בוארון",
+          "start": "11:00",
+          "end": "11:30",
+          "type": "מורקים",
+          "color": "#F87A45"
+        },
+        {
+          "id": "izzpj67df",
+          "title": "פעילות חינוך של צוות חינוך",
+          "start": "11:40",
+          "end": "12:45",
+          "type": "פעילויות",
+          "color": "#FFB3FF"
+        },
+        {
+          "id": "uzm5v4f09",
+          "title": "מורק של עדן",
+          "start": "13:40",
+          "end": "14:10",
+          "type": "מורקים",
+          "color": "#F87A45"
+        },
+        {
+          "id": "12hjsusq1",
+          "title": "שיחה עם שירן מפמ\"ר פריזמה",
+          "start": "09:30",
+          "end": "10:10",
+          "type": "זמן לוז",
+          "color": "#B3FFB3"
+        },
+        {
+          "id": "e61q1hzz5",
+          "title": "הפסקה",
+          "start": "12:55",
           "end": "13:30",
           "type": "הפסקת אוכל",
           "color": "#E0E0E0"
-        },
-        {
-          "id": "jslg13k5g",
-          "title": "תרגול C השלמות",
-          "start": "13:40",
-          "end": "18:30",
-          "type": "C",
-          "color": "#FFB3B3"
-        },
-        {
-          "id": "gtvpj2srn",
-          "title": "ארוחת ערב",
-          "start": "18:40",
-          "end": "19:30",
-          "type": "הפסקת אוכל",
-          "color": "#E0E0E0"
-        },
-        {
-          "id": "vbkweq0gi",
-          "title": "תרגול C השלמות",
-          "start": "19:40",
-          "end": "22:30",
-          "type": "C",
-          "color": "#FFB3B3"
         }
       ]
     },
@@ -119,195 +111,52 @@
       "day": "שלישי",
       "events": [
         {
-          "id": "vr386zq0t",
-          "title": "תרגול C השלמות",
-          "start": "08:20",
-          "end": "09:30",
-          "type": "C",
-          "color": "#FFB3B3"
+          "id": "1110mh2yt",
+          "title": "זום פתיחת יום והסבר על הלו\"ז",
+          "start": "09:45",
+          "end": "10:30",
+          "type": "Zoom",
+          "color": "#B3D9FF"
         },
         {
-          "id": "eshtusbe3",
-          "title": "הרצאה סטראקטים וקומפילציה",
-          "start": "09:40",
-          "end": "10:40",
-          "type": "פעילויות",
-          "color": "#FFB3FF"
+          "id": "8a5jfs3hw",
+          "title": "פאנל מפתחים",
+          "start": "10:40",
+          "end": "12:45",
+          "type": "זמן לוז",
+          "color": "#B3FFB3"
         },
         {
-          "id": "2w2cdsl0o",
-          "title": "ארוחת צהריים",
-          "start": "12:30",
-          "end": "13:30",
+          "id": "piaish30e",
+          "title": "הפסקת צהריים",
+          "start": "12:55",
+          "end": "13:55",
           "type": "הפסקת אוכל",
           "color": "#E0E0E0"
         },
         {
-          "id": "22gecpjmy",
-          "title": "תרגול זיכרון",
-          "start": "10:50",
-          "end": "12:20",
-          "type": "C",
-          "color": "#FFB3B3"
+          "id": "bfz3a2mvt",
+          "title": "הצגת מדורי היחידות",
+          "start": "14:05",
+          "end": "15:00",
+          "type": "Zoom",
+          "color": "#B3D9FF"
         },
         {
-          "id": "ro1ieiid9",
-          "title": "תרגול C השלמה",
-          "start": "13:40",
-          "end": "14:30",
-          "type": "C",
-          "color": "#FFB3B3"
+          "id": "4jvnsfkul",
+          "title": "שיחות שיבוצים",
+          "start": "15:10",
+          "end": "16:05",
+          "type": "זמן לוז",
+          "color": "#B3FFB3"
         },
         {
-          "id": "atf2jwq42",
-          "title": "ארוחת ערב",
-          "start": "18:40",
-          "end": "19:30",
-          "type": "הפסקת אוכל",
-          "color": "#E0E0E0"
-        },
-        {
-          "id": "ttw0qdsix",
-          "title": "תרגול C השלמות",
-          "start": "19:40",
-          "end": "22:30",
-          "type": "C",
-          "color": "#FFB3B3"
-        },
-        {
-          "id": "wkain08r6",
-          "title": "הרצאת Pointers",
-          "start": "14:40",
-          "end": "16:00",
-          "type": "פעילויות",
-          "color": "#FFB3FF"
-        },
-        {
-          "id": "fzdu27ro3",
-          "title": "תרגול Pointers",
-          "start": "16:10",
-          "end": "18:30",
-          "type": "C",
-          "color": "#FFB3B3"
-        }
-      ]
-    },
-    {
-      "day": "רביעי",
-      "events": [
-        {
-          "id": "6gg2wd3zn",
-          "title": "תרגול C השלמות",
-          "start": "08:20",
-          "end": "09:30",
-          "type": "C",
-          "color": "#FFB3B3"
-        },
-        {
-          "id": "sa7o90kop",
-          "title": "תרגול C השלמות",
-          "start": "11:10",
-          "end": "12:20",
-          "type": "C",
-          "color": "#FFB3B3"
-        },
-        {
-          "id": "88v0s9oq0",
-          "title": "ארוחת צהריים",
-          "start": "12:30",
-          "end": "13:30",
-          "type": "הפסקת אוכל",
-          "color": "#E0E0E0"
-        },
-        {
-          "id": "3kerd73yd",
-          "title": "הרצאת Memory Allocations",
-          "start": "09:40",
-          "end": "11:00",
-          "type": "פעילויות",
-          "color": "#FFB3FF"
-        },
-        {
-          "id": "ozarpnuha",
-          "title": "תרגול C השלמה",
-          "start": "13:40",
-          "end": "18:30",
-          "type": "C",
-          "color": "#FFB3B3"
-        },
-        {
-          "id": "rvkhj6bb2",
-          "title": "ארוחת ערב",
-          "start": "18:40",
-          "end": "19:30",
-          "type": "הפסקת אוכל",
-          "color": "#E0E0E0"
-        },
-        {
-          "id": "omy0pyiyc",
-          "title": "תרגול C השלמות",
-          "start": "19:40",
-          "end": "22:30",
-          "type": "C",
-          "color": "#FFB3B3"
-        }
-      ]
-    },
-    {
-      "day": "חמישי",
-      "events": [
-        {
-          "id": "q47y4e9j8",
-          "title": "תרגול C השלמות",
-          "start": "08:20",
-          "end": "12:20",
-          "type": "C",
-          "color": "#FFB3B3"
-        },
-        {
-          "id": "b39cknytz",
-          "title": "הפסקת אוכל",
-          "start": "12:30",
-          "end": "13:30",
-          "type": "הפסקת אוכל",
-          "color": "#E0E0E0"
-        },
-        {
-          "id": "gkmmjz0dv",
-          "title": "תרגול C השלמה",
-          "start": "13:40",
-          "end": "18:30",
-          "type": "C",
-          "color": "#FFB3B3"
-        },
-        {
-          "id": "lavskdusd",
-          "title": "ארוחת ערב",
-          "start": "18:40",
-          "end": "19:30",
-          "type": "הפסקת אוכל",
-          "color": "#E0E0E0"
-        },
-        {
-          "id": "nbw8ceoml",
-          "title": "תרגול C השלמה",
-          "start": "19:40",
-          "end": "22:30",
-          "type": "C",
-          "color": "#FFB3B3"
-        }
-      ]
-    },
-    {
-      "day": "שישי",
-      "events": [
-        {
-          "id": "4z6vptp79",
-          "title": "נקודת הערכה: C",
-          "start": "09:00",
-          "end": "22:30",
-          "type": "C",
-          "color": "#FFB3B3"
+          "id": "q0ajj5gnb",
+          "title": "זום מדורי",
+          "start": "16:15",
+          "end": "17:40",
+          "type": "Zoom",
+          "color": "#B3D9FF"
         }
       ]
     }

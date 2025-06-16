@@ -172,6 +172,15 @@ html, body {
   text-overflow: ellipsis;
   margin-top: 20px; /* leave space for type badge */
 }
+/* Hidden time range that appears on hover */
+.time-range {
+  display: none;
+  font-size: 0.7rem;
+  margin-top: 2px;
+}
+.event-block:hover .time-range {
+  display: block;
+}
 /* White badge with event type at top-left */
 .event-type-badge {
   position: absolute;

@@ -566,6 +566,7 @@ function EventBlock({ dayName, eventObj, top, height, adminMode, isSelected, onE
     >
       <div className="event-type-badge">{eventObj.type}</div>
       <span className="event-title">{eventObj.title}</span>
+      <div className="time-range">{eventObj.start} - {eventObj.end}</div>
       {adminMode && isSelected && (
         <>
           <div className="drag-handle top-handle" onMouseDown={handleTopDragStart}></div>
